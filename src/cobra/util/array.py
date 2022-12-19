@@ -1,8 +1,9 @@
 """Helper functions for array operations and sampling."""
 
-from typing import TYPE_CHECKING, NamedTuple, Optional, Union
+from typing import TYPE_CHECKING, NamedTuple, Union
 
 import numpy as np
+import numpy.typing as npt
 import pandas as pd
 
 
@@ -18,7 +19,7 @@ except ImportError:
 
 
 def create_stoichiometric_matrix(
-    model: "Model", array_type: str = "dense", dtype: Optional[np.dtype] = None
+    model: "Model", array_type: str = "dense", dtype: npt.DTypeLike = None
 ) -> Union[np.ndarray, dok_matrix, lil_matrix, pd.DataFrame]:
     """Return a stoichiometric array representation of the given model.
 
